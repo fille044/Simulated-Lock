@@ -1,0 +1,3 @@
+
+
+int getInput(int input);
