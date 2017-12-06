@@ -3,8 +3,8 @@ TESTFILES=test_lock.c
 UNITY=../unity/src/unity.c
 MAIN=main.c
 FUN=input.c lock.c
-OBJ=input.o
-LIB=input.h
+OBJ=input.o lock.o
+LIB=input.h lock.h
 MAINTARGET=lock
 TESTTARGET=test
 
