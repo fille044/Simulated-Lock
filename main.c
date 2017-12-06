@@ -4,8 +4,10 @@
 
 int main(void)
 {
-    int b = dumbfunction(4);
+    setLock(1);
+    int b = getLock();
     int a = getInput(19);
-    printf("HelloWorld! %d %d\n", a, b);
+
+    printf("HelloWorld! %d \n", checkInput(-60, 10));
     return 0;
 }

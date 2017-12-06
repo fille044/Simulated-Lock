@@ -1,1 +1,2 @@
-int dumbfunction(int input);
+int getLock(void);
+void setLock(int State);

@@ -1,6 +1,13 @@
 #include "lock.h"
+#define SIM 0
+int Lock = 1;
 
-int dumbfunction(int input)
+int getLock(void)
 {
-    return (input + 5);
+    return Lock;
+}
+
+void setLock(int State)
+{
+    Lock = State;
 }

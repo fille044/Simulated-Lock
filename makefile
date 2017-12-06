@@ -7,16 +7,31 @@ OBJ=input.o lock.o
 LIB=input.h lock.h
 MAINTARGET=lock
 TESTTARGET=test
+Q=@
 
-main: main.c input.c input.h
-	$(C_COMPILER) -c $(FUN)
-	$(C_COMPILER) -o $(MAINTARGET) $(MAIN) $(OBJ)
-	-del -f *.o
+main: $(MAIN) $(FUN) $(LIB)
+	@echo Building client version
+	$(Q) $(C_COMPILER) -c $(FUN)
+	$(Q) $(C_COMPILER) -o $(MAINTARGET) $(MAIN) $(OBJ)
+	$(Q) -del -f *.o
+	@echo Build complete
 
 test: $(TESTFILES) $(FUN) $(LIB)
-	$(C_COMPILER) -c $(FUN)
-	$(C_COMPILER) -o $(TESTTARGET) $(TESTFILES) $(OBJ) $(UNITY)
-	-del -f *.o
+	@echo Building test version
+	$(Q) $(C_COMPILER) -c $(FUN)
+	$(Q) $(C_COMPILER) -o $(TESTTARGET) $(TESTFILES) $(OBJ) $(UNITY)
+	$(Q) -del -f *.o
+	@echo Build complete
+
+help:
+	@echo ----  To see process, type "Q=" at the end of command  ----
+	@echo *
+	@echo *   main     Build client version
+	@echo *   test     Build test version
+	@echo *   clean    Clean away objectfiles and executives
+	@echo *   install  Upload build to target
+	@echo *   help     Lists available make commands
 
 clean:
-	-del -f *.o *.exe
+	$(Q) -del -f *.o *.exe
+	@echo Clean complete
