@@ -1,6 +1,7 @@
 #include "input.h"
 #include "stdio.h"
 
+
 int getInput(int Input)
 {
     if (Input < 0) {
@@ -8,6 +9,7 @@ int getInput(int Input)
     }
     return Input;
 }
+
 
 int checkInput(int Input, int Answer)
 {

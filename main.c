@@ -2,6 +2,7 @@
 #include "input.h"
 #include "lock.h"
 
+
 int main(void)
 {
     setLock(1);
